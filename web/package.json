@@ -1,0 +1,10 @@
+{
+    "name": "dockertest",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "dependencies": {
+        "express": "^4.16.3",
+        "nodemon": "^1.17.5"
+    }
+}

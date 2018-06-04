@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "docker:clean": "yarn run docker:clean:images && yarn run docker:clean:containers",
+        "docker:clean:containers": "docker container rm -f $(docker container ls -aq)",
+        "docker:clean:images": "docker image rm -f $(docker images -q)",
+        "docker:up": "docker-compose up --build --force-recreate",
+        "docker:down": "docker-compose down",
+        "docker:production:up": "yarn run docker:clean && docker-compose up --build --force-recreate -f docker-compose-production.yml"
+    }
+}
