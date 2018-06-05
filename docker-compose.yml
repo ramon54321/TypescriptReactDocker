@@ -6,12 +6,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:80"
+    depends_on:
+      - web0
+      - web1
   redis:
     build:
       context: ./redis
       dockerfile: Dockerfile
-    depends_on:
-      - proxy
   web0:
     build:
       context: ./web
