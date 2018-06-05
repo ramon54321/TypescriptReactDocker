@@ -1,12 +1,22 @@
 {
     "name": "dockertest",
     "scripts": {
-        "start": "nodemon index.js"
+        "start": "nodemon src/index.js"
     },
     "dependencies": {
+        "@types/react": "^16.3.16",
+        "@types/react-dom": "^16.0.6",
+        "awesome-typescript-loader": "^5.0.0",
         "ejs": "^2.6.1",
         "express": "^4.16.3",
         "nodemon": "^1.17.5",
-        "redis": "^2.8.0"
+        "react": "^16.4.0",
+        "react-dom": "^16.4.0",
+        "redis": "^2.8.0",
+        "source-map-loader": "^0.2.3",
+        "ts-loader": "^4.3.1",
+        "typescript": "^2.9.1",
+        "webpack": "^4.10.2",
+        "webpack-cli": "^3.0.2"
     }
 }
