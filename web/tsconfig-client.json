@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
-        "outDir": "dist",
         "sourceMap": true,
         "noImplicitAny": false,
-        "target": "es6",
+        "target": "es5",
         "jsx": "react",
-        "moduleResolution": "node",
+        "module": "commonjs",
         "experimentalDecorators": true
     },
     "files": [
-        "src/server.tsx"
+        "src/components/HelloClient.tsx"
     ]
 }
