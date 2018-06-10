@@ -10,7 +10,7 @@ const React = require("react")
 const { renderToString } = require("react-dom/server")
 import { Hello } from "./components/Hello"
 
-import { renderReactPage } from "./utils"
+import { renderReactPage } from "./server/utils"
 
 client.on("error", function (err) {
     console.log("Error " + err)

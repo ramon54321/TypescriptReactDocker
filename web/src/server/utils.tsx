@@ -1,7 +1,6 @@
 import * as React from "react"
 import * as ejs from "ejs"
 import { renderToString } from "react-dom/server"
-import { Hello } from "./components/Hello"
 
 export interface PageRenderOptions {
     app: React.ComponentClass<any>

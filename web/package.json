@@ -1,7 +1,13 @@
 {
     "name": "dockertest",
     "scripts": {
-        "start": "nodemon --exec 'ts-node' --ext js,ts,tsx --watch src src/server.tsx",
+        "start": "yarn run run:server",
+        "watch": "concurrently --names 'SCSS,CLIENT' -c 'green,blue' 'yarn run watch:css' 'yarn run watch:client'",
+        "watch:css": "chokidar 'src/**/*.scss' -c 'yarn run build:css'",
+        "watch:client": "chokidar 'src/**/*Client.tsx' -c 'yarn run build:client'",
+        "build:css": "node-sass 'src/style.scss' --output 'dist' --source-map true",
+        "build:client": "webpack",
+        "run:server": "nodemon --exec 'ts-node' --ext js,ts,tsx --watch 'src' --ignore 'src/**/*Client.tsx' src/server.tsx",
         "clean": "yarn run clean:client",
         "clean:client": "rm -f -R ./dist/"
     },
@@ -10,8 +16,11 @@
         "@types/react": "^16.3.16",
         "@types/react-dom": "^16.0.6",
         "awesome-typescript-loader": "^5.0.0",
+        "chokidar-cli": "^1.2.0",
+        "concurrently": "^3.5.1",
         "ejs": "^2.6.1",
         "express": "^4.16.3",
+        "node-sass": "^4.9.0",
         "nodemon": "^1.17.5",
         "react": "^16.4.0",
         "react-dom": "^16.4.0",
