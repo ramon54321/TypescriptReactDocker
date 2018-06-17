@@ -12,7 +12,7 @@ export function renderReactPage(options: PageRenderOptions) {
     const pageOptions: any = { ...options }
     pageOptions.app = appHtml
     return new Promise((resolve, reject) => {
-        ejs.renderFile(__dirname + "/templates/base.ejs",
+        ejs.renderFile(__dirname + "/../templates/base.ejs",
             pageOptions, (err, html) => {
             resolve(html)
         })

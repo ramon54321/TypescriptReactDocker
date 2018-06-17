@@ -5,14 +5,19 @@ services:
       context: ./proxy
       dockerfile: Dockerfile
     ports:
-      - "8080:80"
+      - "3080:80"
+      - "3443:443"
     depends_on:
       - web0
       - web1
+    environment:
+      - MODE=development
   redis:
     build:
       context: ./redis
       dockerfile: Dockerfile
+    environment:
+      - MODE=development
   web0:
     build:
       context: ./web
@@ -23,6 +28,8 @@ services:
       - ./web:/usr/src
     depends_on:
       - redis
+    environment:
+      - MODE=development
   web1:
     build:
       context: ./web
@@ -33,4 +40,6 @@ services:
       - ./web:/usr/src
     depends_on:
       - redis
+    environment:
+      - MODE=development
 

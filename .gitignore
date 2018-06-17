@@ -1,1 +1,4 @@
 .DS_Store
+proxy/server-cert.pem
+proxy/server-key.pem
+proxy/server.csr
